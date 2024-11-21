@@ -11,4 +11,4 @@ epi_embeddings <- pkgmatch::pkgmatch_embeddings_from_pkgs(
   fs::dir_ls("src/contrib", glob = "*.tar.gz")
 )
 
-usethis::use_data(epi_embeddings, internal = TRUE, overwrite = TRUE)
+usethis::use_data(epi_embeddings, overwrite = TRUE)
