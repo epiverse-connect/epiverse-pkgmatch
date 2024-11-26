@@ -2,6 +2,13 @@
 #* @get /search
 #* @serializer json
 function(query) {
+
+  # Sidestep pkgmatch feature of automatically assuming that single-words are
+  # a package name by adding a trailing space
+  if (!grepl(" ", query, fixed = TRUE)) {
+    query <- paste0(query, " ")
+  }
+
   matches <- pkgmatch::pkgmatch_similar_pkgs(
     input = query,
     embeddings = pkgmatch.epi::epi_embeddings
