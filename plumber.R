@@ -17,6 +17,7 @@ function(query) {
   matches <- matches[, colnames(matches) != "rank"]
 
   matches <- merge(matches, pkgmatch.epi::pkgs_metadata)
+  matches <- matches[order(matches$relevance, decreasing = TRUE), ]
 
   list(
     query = query,
