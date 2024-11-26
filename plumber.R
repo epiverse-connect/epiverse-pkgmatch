@@ -9,6 +9,8 @@ function(query) {
   matches$relevance <- 1 / matches$rank # FIXME: use better function
   matches <- matches[, colnames(matches) != "rank"]
 
+  matches <- merge(matches, pkgmatch.epi::pkgs_metadata)
+
   list(
     query = query,
     filter = "epiverse-connect",
