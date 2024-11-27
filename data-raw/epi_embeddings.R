@@ -7,8 +7,15 @@ download.file(
 
 unzip("universe-dump.zip")
 
+source_tarballs <- fs::dir_ls("src/contrib", glob = "*.tar.gz")
+
+names_without_version <- source_tarballs |>
+  stringr::str_replace("_.*\\.tar\\.gz$", ".tar.gz")
+
+fs::file_move(source_tarballs, names_without_version)
+
 epi_embeddings <- pkgmatch::pkgmatch_embeddings_from_pkgs(
-  fs::dir_ls("src/contrib", glob = "*.tar.gz")
+  names_without_version
 )
 
 usethis::use_data(epi_embeddings, overwrite = TRUE)
