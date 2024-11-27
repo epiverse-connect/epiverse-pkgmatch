@@ -2,6 +2,9 @@
 
 test_that("test queries return expected output", {
 
+  # Since ollama is not installed
+  skip_on_ci()
+
   # Simple cases
   expect_true(
     any(
