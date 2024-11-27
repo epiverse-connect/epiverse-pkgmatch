@@ -1,0 +1,25 @@
+---
+title: "Limitations of pkgmatch for Epiverse search"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Limitations of pkgmatch for Epiverse search}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Irrelevant search queries cannot return empty results
+
+During the score summary, when the semantic and keyword search are merged, we lose the score and only get a rank because BM25 and cosine similarity score on different scales. This means that even the first result might be a poor match. 
+
+## Deep integration with the R ecosystem
+
+pkgmatch is designed to search within the R ecosystem. The main benefit is that everything is fit for purpose and streamlined, for documentation & code extraction to embedding calculation.
+
+But it also means adding python libraries in the universe of results is not straightforward.
