@@ -19,4 +19,6 @@ Config/Needs/plumber:
     pkgmatch,
     plumber,
     purrr
+Suggests:
+    pkgmatch
 LazyData: true
