@@ -13,7 +13,7 @@ function(query) {
     input = query,
     embeddings = pkgmatch.epi::epi_embeddings
   )
-  matches$relevance <- 1 / matches$rank # FIXME: use better function
+  matches$relevance <- 1 - matches$rank / nrow(matches) # FIXME: use better function
   matches <- matches[, colnames(matches) != "rank"]
 
   matches <- merge(matches, pkgmatch.epi::pkgs_metadata)
