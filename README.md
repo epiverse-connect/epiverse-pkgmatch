@@ -1,6 +1,7 @@
 # Epiverse pkgmatch
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/epiverse-connect/epiverse-pkgmatch/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/epiverse-connect/epiverse-pkgmatch/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 This projects uses [rOpenSci's pkgmatch package](https://github.com/ropensci-review-tools/pkgmatch) and computes embeddings for the ecosystem of R packages in epidemiology.
